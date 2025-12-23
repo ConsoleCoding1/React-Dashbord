@@ -54,8 +54,8 @@ const Ecommerce = () => {
                 ))}
             </div>
 
-            <div className="flex gap-10 flex-wrap justify-center">
-                <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl  md:w-780">
+            <div className="flex gap-10 justify-center">
+                <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-2 p-4 rounded-2xl  md:w-780">
                     <div className="flex justify-between">
                         <p className="font-semibold text-xl">Revenue Updates</p>
                         <div className="flex items-center gap-4">
@@ -67,8 +67,8 @@ const Ecommerce = () => {
                             </span>
                         </div>
                     </div>
-                    <div className="mt-10 flex gap-10 flex-wrap justify-center">
-                        <div className="border-r-1 border-color m-4 pr-10">
+                    <div className="mt-10 flex gap-10 w-auto justify-center">
+                        <div className="border-r-1 border-color md:m-4 md:pr-5 pr-5">
                             <div>
                                 <p>
                                     <span className="text-3xl font-semibold">$93,438</span>
@@ -96,12 +96,21 @@ const Ecommerce = () => {
                                     color="blue"
                                 />
                             </div>
-
+                            <div className="mt-10">
+                                <Button
+                                    color="white"
+                                    bgColor="blue"
+                                    text="Download Report"
+                                    borderRadius="10px"
+                                /> 
+                            </div>
+                        </div>
+                        <div>
+                            <Stacked width="320px" height="360px" />
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }
