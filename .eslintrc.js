@@ -6,6 +6,7 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'airbnb',
+    'prettier' // Add this
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -16,65 +17,49 @@ module.exports = {
   },
   plugins: [
     'react',
+    'prettier' // Add this
   ],
   rules: {
+    // Existing rules...
     'react/function-component-definition': 0,
     'import/extensions': 0,
     'react/prop-types': 0,
     'linebreak-style': 0,
     'react/state-in-constructor': 0,
     'import/prefer-default-export': 0,
-    'max-len': [
-      2,
-      550,
-    ],
-    'no-multiple-empty-lines': [
-      'error',
-      {
-        max: 1,
-        maxEOF: 1,
+    
+    // Add these React-specific fixes:
+    'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
+    'react/react-in-jsx-scope': 'off', // Not needed in React 17+
+    
+    // JSX formatting
+    'react/jsx-indent': ['error', 2],
+    'react/jsx-indent-props': ['error', 2],
+    'react/jsx-closing-tag-location': 'error',
+    'react/jsx-curly-spacing': ['error', { 'when': 'never', 'children': true }],
+    'react/jsx-wrap-multilines': 'error',
+    'react/jsx-props-no-spreading': 'off',
+    'react/jsx-boolean-value': ['error', 'never'],
+    
+    // Prettier integration
+    'prettier/prettier': 'error',
+    
+    // Your existing rules...
+    'no-tabs': 'error',
+    'indent': ['error', 2],
+    'semi': ['error', 'always'],
+    'no-unused-vars': 'warn',
+    // ... rest of your rules
+  },
+  settings: {
+    react: {
+      version: 'detect', // Automatically detect React version
+    },
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx'],
+        moduleDirectory: ['node_modules', 'src/'],
       },
-    ],
-    'no-underscore-dangle': [
-      'error',
-      {
-        allow: [
-          '_d',
-          '_dh',
-          '_h',
-          '_id',
-          '_m',
-          '_n',
-          '_t',
-          '_text',
-        ],
-      },
-    ],
-    'object-curly-newline': 0,
-    'react/jsx-filename-extension': 0,
-    'react/jsx-one-expression-per-line': 0,
-    'jsx-a11y/click-events-have-key-events': 0,
-    'jsx-a11y/alt-text': 0,
-    'jsx-a11y/no-autofocus': 0,
-    'jsx-a11y/no-static-element-interactions': 0,
-    'react/no-array-index-key': 0,
-    'jsx-a11y/anchor-is-valid': [
-      'error',
-      {
-        components: [
-          'Link',
-        ],
-        specialLink: [
-          'to',
-          'hrefLeft',
-          'hrefRight',
-        ],
-        aspects: [
-          'noHref',
-          'invalidHref',
-          'preferButton',
-        ],
-      },
-    ],
+    },
   },
 };
