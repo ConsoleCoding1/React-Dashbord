@@ -9,7 +9,15 @@ import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropd
 import { useStateContext } from '../context/ContextProvider';
 import product9 from '../data/product9.jpg';
 
+const DropDown = ({ currentMode }) => (
+  <div className="w-28 border-1 border-color px-2 py-1 rounded-md">
+    <DropDownListComponent id="time" fields={{ text: 'Time', value: 'Id' }} style={{ border: 'none', color: (currentMode === 'Dark') && 'white' }} value="1" dataSource={dropdownData} popupHeight="220px" popupWidth="120px" />
+  </div>
+);
+
 const Ecommerce = () => {
+    const { currentColor, currentMode } = useStateContext();
+
     return (
         <div className="mt-24">
             <div className="flex flex-wrap lg:flex-nowrap justify-center ">
@@ -19,39 +27,43 @@ const Ecommerce = () => {
                             <p className="font-bold text-gray-400">Earnings</p>
                             <p className="text-2xl">$63,448.78</p>
                         </div>
+                        <button
+                            type="button"
+                            style={{ backgroundColor: currentColor }}
+                            className="text-2xl opacity-0.9 text-white hover:drop-shadow-xl rounded-full  p-4"
+                        >
+                            <BsCurrencyDollar />
+                        </button>
                     </div>
-                    <div className='mt-6'>
+                    <div className="mt-6">
                         <Button
                             color="white"
-                            bgColor="blue"
+                            bgColor={currentColor}
                             text="Download"
                             borderRadius="10px"
-                            size="md"
                         />
                     </div>
                 </div>
-
-
-            </div>
-            <div className="flex m-3 flex-wrap justify-center gap-1 items-center">
-                {earningData.map((item) => (
-                    <div key={item.title} className="bg-white h-44 dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56 w-40  p-4 pt-9 rounded-2xl ">
-                        <button
-                            type="button"
-                            style={{ color: item.iconColor, backgroundColor: item.iconBg }}
-                            className="text-2xl opacity-0.9 rounded-full  p-4 hover:drop-shadow-xl"
-                        >
-                            {item.icon}
-                        </button>
-                        <p className="mt-3">
-                            <span className="text-lg font-semibold">{item.amount}</span>
-                            <span className={`text-sm text-${item.pcColor} ml-2`}>
-                                {item.percentage}
-                            </span>
-                        </p>
-                        <p className="text-sm text-gray-400  mt-1">{item.title}</p>
-                    </div>
-                ))}
+                <div className="flex m-3 flex-wrap justify-center gap-1 items-center">
+                    {earningData.map((item) => (
+                        <div key={item.title} className="bg-white h-44 dark:text-gray-200 dark:bg-secondary-dark-bg md:w-fit w-56  p-4 pt-9 rounded-2xl ">
+                            <button
+                                type="button"
+                                style={{ color: item.iconColor, backgroundColor: item.iconBg }}
+                                className="text-2xl opacity-0.9 rounded-full  p-4 hover:drop-shadow-xl"
+                            >
+                                {item.icon}
+                            </button>
+                            <p className="mt-3">
+                                <span className="text-lg font-semibold">{item.amount}</span>
+                                <span className={`text-sm text-${item.pcColor} ml-2`}>
+                                    {item.percentage}
+                                </span>
+                            </p>
+                            <p className="text-sm text-gray-400  mt-1">{item.title}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
 
             <div className="flex gap-10 justify-center">
@@ -102,7 +114,7 @@ const Ecommerce = () => {
                                     bgColor="blue"
                                     text="Download Report"
                                     borderRadius="10px"
-                                /> 
+                                />
                             </div>
                         </div>
                         <div>
