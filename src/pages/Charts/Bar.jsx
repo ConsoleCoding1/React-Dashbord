@@ -40,8 +40,8 @@ const Bar = () => {
           />
           <SeriesCollectionDirective>
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-            {barCustomSeries.map((item, index) => (
-              <SeriesDirective key={index} {...item} />
+            {barCustomSeries.map((item) => (
+              <SeriesDirective key={item.name} {...item} />
             ))}
           </SeriesCollectionDirective>
         </ChartComponent>

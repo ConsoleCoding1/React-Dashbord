@@ -32,9 +32,9 @@ const Notification = () => {
         />
       </div>
       <div className="mt-5 ">
-        {chatData?.map((item, index) => (
+        {chatData?.map((item  ) => (
           <div
-            key={index}
+            key={item.name}
             className="flex items-center leading-8 gap-5 border-b-1 border-color p-3"
           >
             <img

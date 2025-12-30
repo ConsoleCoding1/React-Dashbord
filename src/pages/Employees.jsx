@@ -337,9 +337,9 @@ const Ecommerce = () => {
           <div className="mt-2">
             <p className="text-md font-semibold mb-2">Leaders</p>
             <div className="flex gap-4">
-              {medicalproBranding.leaders.map((item, index) => (
+              {medicalproBranding.leaders.map((item) => (
                 <img
-                  key={index}
+                  key={item.name}
                   className="rounded-full w-8 h-8"
                   src={item.image}
                   alt=""

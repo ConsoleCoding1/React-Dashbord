@@ -29,9 +29,9 @@ const Chat = () => {
         />
       </div>
       <div className="mt-5 ">
-        {chatData?.map((item, index) => (
+        {chatData?.map((item) => (
           <div
-            key={index}
+            key={item.name}
             className="flex items-center gap-5 border-b-1 border-color p-3 leading-8 cursor-pointer"
           >
             <div className="relative">

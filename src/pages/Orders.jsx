@@ -34,8 +34,8 @@ const Orders = () => {
       >
         <ColumnsDirective>
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-          {ordersGrid.map((item, index) => (
-            <ColumnDirective key={index} {...item} />
+          {ordersGrid.map((item) => (
+            <ColumnDirective key={item.name} {...item} />
           ))}
         </ColumnsDirective>
         <Inject

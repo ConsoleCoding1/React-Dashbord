@@ -37,7 +37,6 @@ const LineChart = () => {
         {lineCustomSeries.map((item) => (
           <SeriesDirective key={item.name} {...item} />
         ))}
-
       </SeriesCollectionDirective>
     </ChartComponent>
   );

@@ -29,16 +29,14 @@ const ThemeSettings = () => {
           <div className="mt-4">
             <input
               type="radio"
-              id="light"
+              id="dark"
               name="theme"
-              value="Light"
-              className="cursor-pointer"
+              value="Dark"
               checked={currentMode === "Light"}
               onChange={setMode}
             />
-            <label htmlFor="light" className="ml-2 text-md cursor-pointer">
-              Light
-            </label>
+            <label htmlFor="dark" className="ml-2 text-md cursor-pointer">Light</label>
+
           </div>
           <div className="mt-4">
             <input
@@ -60,7 +58,7 @@ const ThemeSettings = () => {
           <div className="flex gap-3 mt-4">
             {themeColors.map((item) => (
               <TooltipComponent content={item.name} key={item.name}>
-                <div
+                <button
                   className="w-8 h-8 rounded-full cursor-pointer"
                   style={{ backgroundColor: item.color }}
                   onClick={() => setColor(item.color)}

@@ -35,8 +35,8 @@ const Customers = () => {
       >
         <ColumnsDirective>
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-          {customersGrid.map((item, index) => (
-            <ColumnDirective key={index} {...item} />
+          {customersGrid.map((item) => (
+            <ColumnDirective key={item.name} {...item} />
           ))}
         </ColumnsDirective>
         <Inject services={[Page, Selection, Toolbar, Edit, Sort, Filter]} />

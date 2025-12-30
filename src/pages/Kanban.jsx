@@ -19,8 +19,8 @@ const Kanban = () => (
       cardSettings={{ contentField: "Summary", headerField: "ID" }}
     >
       <ColumnsDirective>
-        {kanbanGrid.map((item, index) => (
-          <ColumnDirective key={index} {...item} />
+        {kanbanGrid.map((item) => (
+          <ColumnDirective key={item.name} {...item} />
         ))}
         {/* headerText={item.headerText} keyField={item.keyField} allowToggle={item.allowToggle} */}
       </ColumnsDirective>

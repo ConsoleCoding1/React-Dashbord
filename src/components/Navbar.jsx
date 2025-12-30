@@ -88,7 +88,7 @@ const Navbar = () => {
           icon={<RiNotification3Line />}
         />
         <TooltipComponent content="Profile" position="BottomCenter">
-          <div
+          <button
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
             onClick={() => handleClick("userProfile")}
           >
@@ -104,7 +104,7 @@ const Navbar = () => {
               </span>
             </p>
             <MdKeyboardArrowDown className="text-gray-400 text-14" />
-          </div>
+          </button>
         </TooltipComponent>
 
         {isClicked.cart && <Cart />}
