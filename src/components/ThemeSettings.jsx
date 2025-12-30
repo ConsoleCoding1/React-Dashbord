@@ -29,14 +29,15 @@ const ThemeSettings = () => {
           <div className="mt-4">
             <input
               type="radio"
-              id="dark"
+              id="light"
               name="theme"
-              value="Dark"
+              value="light"
               checked={currentMode === "Light"}
               onChange={setMode}
             />
-            <label htmlFor="dark" className="ml-2 text-md cursor-pointer">Light</label>
-
+            <label htmlFor="light" className="ml-2 text-md cursor-pointer">
+              Light
+            </label>
           </div>
           <div className="mt-4">
             <input

@@ -7,7 +7,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 import avatar from "../data/avatar.jpg";
-import { Cart, Chat, Notification, UserProfile } from ".";
+import { Cart, Chat, Notification, UserProfile } from "./index.jsx";
 import { useStateContext } from "../context/ContextProvider";
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
@@ -89,6 +89,7 @@ const Navbar = () => {
         />
         <TooltipComponent content="Profile" position="BottomCenter">
           <button
+            type="button"
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
             onClick={() => handleClick("userProfile")}
           >
